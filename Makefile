@@ -24,8 +24,7 @@ build: deps
 		./build.sh $(Name)
 
 ## Release
-release: build
-	test -e artifacts/ || mkdir artifacts/
+release:
 	ghr -t ${GITHUB_TOKEN} -u $(OWNER) -r $(Repository) --replace $(Version) artifacts/
 
 ## Show help
